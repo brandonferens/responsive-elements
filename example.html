@@ -1,0 +1,66 @@
+<html>
+<head>
+  <title>Responsive Elements</title>
+  <style>
+  body {
+    width: 75%;
+    margin: 0 auto;
+  }
+  .responsive {
+    border-width: 1px;
+    border-style: solid;
+  }
+  .responsive-xs{
+    border-color: #0ff;
+  }
+  .responsive-sm{
+    border-color: #f00;
+  }
+  .responsive-md{
+    border-color: #0f0;
+  }
+  .responsive-lg{
+    border-color: #00f;
+  }
+
+  /* These are class for the custom rules */
+  .customClass{
+    color: #fff;
+  }
+  .customClassXSmall{
+    background-color: #0ff;
+  }
+  .customClassSmall{
+    background-color: #f00;
+  }
+  .customClassMedium{
+    background-color: #0f0;
+  }
+  .customClassLarge{
+    background-color: #00f;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="responsive">This is a div</div>
+    <div class="responsive">This is another div</div>
+    <div class="customClass">This is a div with a custom class</div>
+  </div>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript" src="jquery.responsiveElement.js"></script>
+  <script type="text/javascript">
+  // The basic function with no additional parameters
+  $('.responsive').responsiveElement();
+
+  // The function with widths and class names supplied
+  $('.customClass').responsiveElement({
+    rules: [
+      '0,customClassXSmall',
+      '200,customClassSmall',
+      '400,customClassMedium',
+      '800,customClassLarge',
+    ]
+  });
+  </script>
+</body>
