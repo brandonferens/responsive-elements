@@ -1,9 +1,8 @@
 #responsiveElement 1.0.0
-===================
 
 Element queries don't exist yet for CSS3, but this plugin allows you to do just that with jQuery.
 
-The basic functionality of this plugin applies different css classes to an element depending on it's width.
+This plugin changes the class of an element depending on its width. By changing the class like this, you can now use CSS to manipulate and alter the contents of the element.
 
 ##Installation
 
@@ -43,7 +42,7 @@ There are a couple options that can be applied to customize it. You can also app
 ##Configuration Options
 
 **rules**
-Rules that are applied to the element in question
+Rules that are applied to the element in question. The default widths are based off of Twitter Bootstrap 8 column widths.
 ```
 default: [
   '750,responsive-lg',
