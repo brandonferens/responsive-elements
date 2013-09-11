@@ -12,7 +12,7 @@ The jQuery library needs to be loaded first, then this plugin.
 
 ```html
 <!-- jQuery library (served from Google) -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <!-- bxSlider Javascript file -->
 <script src="/js/jquery.responsiveElement.min.js"></script>
 ```
