@@ -1,66 +1,221 @@
-<html>
-<head>
-  <title>Responsive Elements</title>
-  <style>
-  body {
-    width: 75%;
-    margin: 0 auto;
-  }
-  .responsive {
-    border-width: 1px;
-    border-style: solid;
-  }
-  .responsive-xs{
-    border-color: #0ff;
-  }
-  .responsive-sm{
-    border-color: #f00;
-  }
-  .responsive-md{
-    border-color: #0f0;
-  }
-  .responsive-lg{
-    border-color: #00f;
-  }
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-  /* These are class for the custom rules */
-  .customClass{
-    color: #fff;
-  }
-  .customClassXSmall{
-    background-color: #0ff;
-  }
-  .customClassSmall{
-    background-color: #f00;
-  }
-  .customClassMedium{
-    background-color: #0f0;
-  }
-  .customClassLarge{
-    background-color: #00f;
-  }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="responsive">This is a div</div>
-    <div class="responsive">This is another div</div>
-    <div class="customClass">This is a div with a custom class</div>
-  </div>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script type="text/javascript" src="jquery.responsiveElement.js"></script>
-  <script type="text/javascript">
-  // The basic function with no additional parameters
-  $('.responsive').responsiveElement();
+    <title>responsiveElement.js</title>
 
-  // The function with widths and class names supplied
-  $('.customClass').responsiveElement({
-    rules: [
-      '0,customClassXSmall',
-      '200,customClassSmall',
-      '400,customClassMedium',
-      '800,customClassLarge',
-    ]
-  });
-  </script>
-</body>
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="assets/css/pygments-manni.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target="">
+    <header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#js">responsiveElement.js</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#installation">Installation</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#step1" tabindex="-1">Link Required Files</a></li>
+                <li><a href="#step2" tabindex="-1">Create HTML Markup</a></li>
+                <li><a href="#step3" tabindex="-1">Call responsiveElement</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#config">Configuration</a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#rules">Rules</a></li>
+              </ul>
+            </li>
+            <li><a href="#examples">Working Examples</a></li>
+          </ul>
+        </div><!-- /.nav-collapse -->
+      </div><!-- /.container -->
+    </header><!-- /.navbar -->
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-12 col-sm-12">
+          <div class="row">
+            <div class="col-3 col-xs-3" id="sidebar" role="navigation">
+              <div class="bs-sidebar affix" role="complementary">
+                <ul class="nav bs-sidenav">
+                  <li>
+                    <a href="#js">responsiveElement.js</a>
+                  </li>
+                  <li class="active">
+                    <a href="#installation">Installation</a>
+                    <ul class="nav">
+                      <li><a href="#step1">Link Required Files</a></li>
+                      <li><a href="#step2">Create HTML Markup</a></li>
+                      <li><a href="#step3">Call responsiveElement</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#config">Configuration</a>
+                    <ul class="nav">
+                      <li><a href="#rules">Rules</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#examples">Working Examples</a>
+                  </li>
+                  <li><a href="#license">License</a></li>
+                </ul>
+              </div><!--/.well -->
+            </div><!--/span-->
+            <div class="col-9 col-xs-9">
+              <section>
+                <h1 id="js">responsiveElement.js</h1>
+                <hr />
+
+                <p>Element queries don't exist yet for CSS3, but this plugin allows you to do just that with jQuery.</p>
+                <p>This plugin changes the class of an element depending on its width. By changing the class like this, you can now use CSS to manipulate and alter the contents of the element essential creating functionality similar to a media query. Only instead of being window width dependent, it is dependent upon it's own width. Enjoy!</p>
+              </section>
+
+              <section>
+                <h1 id="installation">Installation</h1>
+                <hr />
+
+                <h3 id="step1">Step 1: Link Required Files</h3>
+                <p>The jQuery library needs to be loaded first, then this plugin.</p>
+<pre class="pre-scrollable"><code class="html"><span class="nt">&lt;script</span><span class="na"> src=</span><span class="s">"//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script</span><span class="na"> src=</span><span class="s">"/js/jquery.responsiveElement.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span></code></pre>
+
+                <h3 id="step2">Step 2: Create HTML Markup</h3>
+                <p>Locate the element you want made responsive and add add any class name you want to it. For this example, we will make it "responsive".</p>
+<div class="highlight">
+<pre><code class="html"><span class="nt">&lt;div</span><span class="na"> class=</span><span class="s">"responsive"</span><span class="nt">&gt;</span>
+<span>  The content of my div is here</span>
+<span class="nt">&lt;/div&gt;</span></code></pre>
+</div>
+
+                <h3 id="step3">Step 3: Call responsiveElement</h3>
+<div class="highlight">
+<pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">() {</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">'.responsive'</span><span class="p">).</span><span class="nx">responsiveElement</span><span class="p">();</span>
+<span class="p">});</span></code></pre>
+</div>
+
+                <p>That's it!</p>
+                <p>There are a couple options that can be applied to customize it. You can also apply this to multiple elements on the page at a time, all with different options!</p>
+
+              </section>
+
+              <section>
+
+                <h1 id="config">Configuration Options</h1>
+                <hr>
+                <h4 id="rules">rules</h4>
+                <p>Rules that are applied to the element in question. The default widths are based off of Twitter Bootstrap 8 column widths.</p>
+<div class="highlight">
+<pre><code class="js"><span class="nx">default</span><span class="o">:</span><span class="p"> [</span>
+<span class="s1">'750,responsive-lg'<span class="p">,</span></span>
+<span class="s1">'617,responsive-md'<span class="p">,</span></span>
+<span class="s1">'470,responsive-sm'<span class="p">,</span></span>
+<span class="s1">'0,responsive-xs'</span>
+<span class="p">]</span></code></pre>
+</div>
+                <p>The format of the each element in the default array is "minimum pixel width, class to be applied". So if the width of <code>&lt;div class="responsive"&gt;</code> is 750 pixels or larger, then the element will become <code>&lt;div class="responsive responsive-lg"&gt;</code>.</p>
+                <p>See the example below for a usage example.</p>
+
+<div class="highlight">
+<pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.customRules'</span><span class="p">).</span><span class="nx">responsiveElement</span><span class="p">({</span>
+<span class="nx">rules</span><span class="o">:</span><span class="p"> [</span>
+  <span class="s1">'600,customRulesLarge'<span class="p">,</span></span>
+  <span class="s1">'400,customRulesMedium'<span class="p">,</span></span>
+  <span class="s1">'200,customRulesSmall'<span class="p">,</span></span>
+  <span class="s1">'0,customRulesXSmall'</span>
+<span class="p">]</span>
+<span class="p">});</span></code></pre>
+</div>
+              </section>
+
+              <section>
+                <h1 id="examples">Working Examples</h1>
+                <hr>
+                <p>Go ahead! Give it a try! Resize your browser to see responsiveElement.js in action!</p>
+
+                <div class="responsive">
+                  <div>
+                    <h4>Default Ruleset</h4>
+                    <p>This box's background color will change based on the width of the element. It uses the default ruleset of responsiveElement.js.</p>
+                  </div>
+                </div>
+
+                <div class="customRules">
+                  <div>
+                    <h4>Custom Ruleset</h4>
+                    <p>This box's background color will also change based on the width of the element. However, it uses a custom ruleset. View the source of this page to see what is going on.</p>
+                    <p>It's background color will change based on the following widths:
+                      <ul>
+                        <li>Greater than or equal to 600px</li>
+                        <li>Greater than or equal to 400px</li>
+                        <li>Greater than or equal to 200px</li>
+                        <li>Greater than or equal to 0px</li>
+                      </ul>
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section>
+                <h1 id="license">License</h1>
+                <hr />
+
+                <p>responsiveElement.js is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)</p>
+              </section>
+            </div>
+          </div>
+        </div>
+
+      </div><!--/row-->
+
+      <footer class="bs-footer">
+        <p>responsiveElement.js made with love by <a href="https://twitter.com/bferens">Brandon Ferens</a>, aka <a href="https://twitter.com/bferens">@bferens</a> at <a href="http://perfectspace.com/">Perfect Space, Inc.</a>
+      </footer>
+
+    </div><!--/.container-->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="jquery.responsiveElement.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+    // The basic function with no additional parameters
+    $('.responsive').responsiveElement();
+
+    // The function with widths and class names supplied
+    $('.customRules').responsiveElement({
+      rules: [
+        '0,customRulesXSmall',
+        '200,customRulesSmall',
+        '400,customRulesMedium',
+        '600,customRulesLarge',
+      ]
+    });
+    </script>
+  </body>
+</html>
