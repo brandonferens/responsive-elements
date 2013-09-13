@@ -58,3 +58,7 @@ The format of the each element in the default array is "minimum pixel width, cla
 See the example.html file for a couple examples.
 
 Have fun!
+
+### License
+
+responsiveElement.js is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

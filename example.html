@@ -60,7 +60,7 @@
       <div class="row">
         <div class="col-12 col-sm-12">
           <div class="row">
-            <div class="col-3 col-xs-3" id="sidebar" role="navigation">
+            <div class="col-3 col-xs-3 hidden-xs hidden-sm" id="sidebar" role="navigation">
               <div class="bs-sidebar affix" role="complementary">
                 <ul class="nav bs-sidenav">
                   <li>
@@ -87,7 +87,7 @@
                 </ul>
               </div><!--/.well -->
             </div><!--/span-->
-            <div class="col-9 col-xs-9">
+            <div class="col-9 col-md-9">
               <section>
                 <h1 id="js">responsiveElement.js</h1>
                 <hr />
@@ -116,7 +116,7 @@
                 <h3 id="step3">Step 3: Call responsiveElement</h3>
 <div class="highlight">
 <pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">() {</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">'.responsive'</span><span class="p">).</span><span class="nx">responsiveElement</span><span class="p">();</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">'.responsive'</span><span class="p">).</span><span class="nx">responsiveElement</span><span class="p">();</span>
 <span class="p">});</span></code></pre>
 </div>
 
@@ -133,10 +133,10 @@
                 <p>Rules that are applied to the element in question. The default widths are based off of Twitter Bootstrap 8 column widths.</p>
 <div class="highlight">
 <pre><code class="js"><span class="nx">default</span><span class="o">:</span><span class="p"> [</span>
-<span class="s1">'750,responsive-lg'<span class="p">,</span></span>
-<span class="s1">'617,responsive-md'<span class="p">,</span></span>
-<span class="s1">'470,responsive-sm'<span class="p">,</span></span>
-<span class="s1">'0,responsive-xs'</span>
+  <span class="s1">'750,responsive-lg'<span class="p">,</span></span>
+  <span class="s1">'617,responsive-md'<span class="p">,</span></span>
+  <span class="s1">'470,responsive-sm'<span class="p">,</span></span>
+  <span class="s1">'0,responsive-xs'</span>
 <span class="p">]</span></code></pre>
 </div>
                 <p>The format of the each element in the default array is "minimum pixel width, class to be applied". So if the width of <code>&lt;div class="responsive"&gt;</code> is 750 pixels or larger, then the element will become <code>&lt;div class="responsive responsive-lg"&gt;</code>.</p>
@@ -144,14 +144,15 @@
 
 <div class="highlight">
 <pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="s1">'.customRules'</span><span class="p">).</span><span class="nx">responsiveElement</span><span class="p">({</span>
-<span class="nx">rules</span><span class="o">:</span><span class="p"> [</span>
-  <span class="s1">'600,customRulesLarge'<span class="p">,</span></span>
-  <span class="s1">'400,customRulesMedium'<span class="p">,</span></span>
-  <span class="s1">'200,customRulesSmall'<span class="p">,</span></span>
-  <span class="s1">'0,customRulesXSmall'</span>
-<span class="p">]</span>
+  <span class="nx">rules</span><span class="o">:</span><span class="p"> [</span>
+    <span class="s1">'600,customRulesLarge'<span class="p">,</span></span>
+    <span class="s1">'400,customRulesMedium'<span class="p">,</span></span>
+    <span class="s1">'200,customRulesSmall'<span class="p">,</span></span>
+    <span class="s1">'0,customRulesXSmall'</span>
+  <span class="p">]</span>
 <span class="p">});</span></code></pre>
 </div>
+              <p><label class="label label-info">Remember</label> When the width of an element is determined by either css or javascript, things like border widths and padding are included. Because of this, it is easiest to place your element in a wrapper and apply responsiveElement to that instead.</p>
               </section>
 
               <section>
