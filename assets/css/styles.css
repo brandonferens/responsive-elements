@@ -1,5 +1,33 @@
+/* Variations for responsiveElement.js */
+.responsive div,
+.customRules div {
+  margin: 20px 0;
+  padding: 15px 30px 15px 15px;
+  border-left: 5px solid #eee;
+}
+.responsive-lg div,
+.customRulesLarge div {
+  background-color: #fcf2f2;
+  border-color: #dFb5b4;
+}
+.responsive-md div,
+.customRulesMedium div {
+  background-color: #fefbed;
+  border-color: #f1e7bc;
+}
+.responsive-sm div,
+.customRulesSmall div {
+  background-color: #f0f7fd;
+  border-color: #d0e3f0;
+}
+.responsive-xs div,
+.customRulesXSmall div {
+  background-color: #e2ffe2;
+  border-color: #95d195;
+}
+
+/* Pygments Manni */
 .hll { background-color: #ffffcc }
- /*{ background: #f0f3f3; }*/
 .c { color: #999; } /* Comment */
 .err { color: #AA0000; background-color: #FFAAAA } /* Error */
 .k { color: #006699; } /* Keyword */

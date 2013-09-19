@@ -9,16 +9,20 @@
 
     <title>responsiveElement.js</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-theme.css" rel="stylesheet">
-    <link href="assets/css/pygments-manni.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="assets/css/pygments-manni.css" rel="stylesheet"> -->
     <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <!-- <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../../assets/js/html5shiv.js"></script>
-      <script src="../../assets/js/respond.min.js"></script>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.3.0/respond.js"></script>
     <![endif]-->
   </head>
 
@@ -50,9 +54,11 @@
               </ul>
             </li>
             <li><a href="#examples">Working Examples</a></li>
+            <li><a href="https://github.com/brandonferens/responsive-elements" class="visible-xs"><i class="icon-github"></i> Fork on Github</a></li>
           </ul>
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
+      <a href="https://github.com/brandonferens/responsive-elements" class="hidden-xs"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
     </header><!-- /.navbar -->
 
     <div class="container">
@@ -94,6 +100,25 @@
 
                 <p>Element queries don't exist yet for CSS3, but this plugin allows you to do just that with jQuery.</p>
                 <p>This plugin changes the class of an element depending on its width. By changing the class like this, you can now use CSS to manipulate and alter the contents of the element essential creating functionality similar to a media query. Only instead of being window width dependent, it is dependent upon it's own width. Enjoy!</p>
+              </section>
+
+              <section>
+                <h1>Download</h1>
+                <hr />
+
+                <p>You have a couple choices in front of you:</p>
+                <ul class="list-unstyled">
+                  <li>
+                    <i class="icon-download"></i>
+                    <strong>Download package:</strong>
+                    <a href="https://github.com/brandonferens/responsive-elements/archive/master.zip">responsiveElement.zip</a>
+                  </li>
+                  <li>
+                    <i class="icon-github"></i>
+                    <strong>Fork on Github:</strong>
+                    <a href="https://github.com/brandonferens/responsive-elements">Fork here</a>
+                  </li>
+                </ul>
               </section>
 
               <section>
@@ -202,21 +227,21 @@
     </div><!--/.container-->
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="jquery.responsiveElement.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="jquery.responsiveElement.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    // The basic function with no additional parameters
-    $('.responsive').responsiveElement();
+      // The basic function with no additional parameters
+      $('.responsive').responsiveElement();
 
-    // The function with widths and class names supplied
-    $('.customRules').responsiveElement({
-      rules: [
-        '0,customRulesXSmall',
-        '200,customRulesSmall',
-        '400,customRulesMedium',
-        '600,customRulesLarge',
-      ]
-    });
+      // The function with widths and class names supplied
+      $('.customRules').responsiveElement({
+        rules: [
+          '0,customRulesXSmall',
+          '200,customRulesSmall',
+          '400,customRulesMedium',
+          '600,customRulesLarge',
+        ]
+      });
     </script>
   </body>
 </html>

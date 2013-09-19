@@ -501,6 +501,10 @@ h1[id] {
   padding-top: 80px;
   margin-top: -45px;
 }
+h3[id], h4[id] {
+  padding-top: 80px;
+  margin-top: -60px;
+}
 
 
 /*
