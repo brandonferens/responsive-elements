@@ -4,7 +4,7 @@ Element queries don't exist yet for CSS3, but this plugin allows you to do just 
 
 This plugin changes the class of an element depending on its width. By changing the class like this, you can now use CSS to manipulate and alter the contents of the element.
 
-For the complete how-to's, go to the [responsiveElement documentation](http://responsiveelement.perfectspace.com/)
+For the complete how-to's, go to the [responsiveElement documentation](http://responsiveelement.brandonferens.com/)
 
 ##Installation
 
